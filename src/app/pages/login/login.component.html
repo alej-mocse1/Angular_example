@@ -1,0 +1,96 @@
+<form class="row g-3 formStyles"   [formGroup]="myForm" >
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label" >Name </label>
+      <input 
+        type="email" 
+        class="form-control"
+        placeholder="Name" 
+        formControlName="name" 
+        [ngClass]="{'is-invalid': HasErrors('name','required')}"
+        />
+       @if (HasErrors("name","required")) {
+              <div  class="text-danger"> name required</div>
+      } 
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Last name</label>
+      <input 
+         type="text" class="form-control"
+         placeholder="Last name" 
+         formControlName="LastName"
+         [ngClass]="{'is-invalid': HasErrors('LastName','required')}"
+         >
+      @if (HasErrors("LastName","required")) {
+        <div  class="text-danger"> Last name required</div>
+      } 
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label" >Email</label>
+      <input 
+       type="text" 
+       class="form-control" 
+       placeholder="Email" 
+       formControlName="email"
+       [ngClass]="{'is-invalid': HasErrors('email','required') ||  HasErrors('email','email') }"
+       />
+      @if (HasErrors("email","required")) {
+        <div  class="text-danger"> Email required</div>
+      } 
+
+      @if (HasErrors("email","email")) {
+        <div  class="text-danger">Invalid format</div>
+      } 
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        placeholder="Password"  
+        formControlName="password"
+        [ngClass]="{'is-invalid': HasErrors('password','required') ||  HasErrors('password','minLength') }"
+        >
+      @if (HasErrors("password","required")) {
+        <div  class="text-danger"> Password required</div>
+      } 
+      @if (HasErrors("password","minlength")) {
+        <div  class="text-danger">6 characters minimum</div>
+      } 
+    </div>
+    <!-- <div class="col-md-8">
+      <label for="inputCity" class="form-label" formControlName="LastName">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select" formControlName="LastName">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div> -->
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary"  (click)="enviar()">Sign in</button>
+    </div>
+  </form>
+
+
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="liveToast" 
+         class="toast" 
+         role="alert" 
+         aria-live="assertive" 
+         aria-atomic="true" 
+         [ngClass]="{'show': showToast, 'hide': !showToast}">
+      <div class="toast-header bg-dark-blue text-primary">
+        <b class="me-auto">Welcome, {{myForm.get('name')?.value}}</b>
+        
+        <small></small>
+        <button type="button"  class="btn-close btn-close-black" data-bs-dismiss="toast" aria-label="Close" (click)="showToast = false"></button>
+      </div>
+      <div class="toast-body text-dark">
+    
+           You are already registered
+      
+      </div>
+    </div>
+  </div>

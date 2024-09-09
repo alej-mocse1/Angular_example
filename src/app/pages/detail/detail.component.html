@@ -1,0 +1,19 @@
+@if (_ProductsDetail.length == 0) {
+    <div class="Loading_div" style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+} @else {
+    <div class="productos-grid">
+        @for (item of _ProductsDetail; track item.id) {
+            <div>
+                <app-cards
+                [title]="item.title"
+                [description]="item.description"
+                [image]="item.image"
+                />
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,38 @@
+.Loading_div{
+    width: 97vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; /* Espacio entre las columnas y filas */
+    margin-top: 70px;
+    padding-bottom: 50px;
+  }
+
+
+  .productos-grid div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+
+
+  @media (max-width: 1000px) {
+    .productos-grid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas cuando el ancho de la pantalla es de 784px o menos */
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .productos-grid {
+      grid-template-columns: repeat(1, 1fr); /* Dos columnas cuando el ancho de la pantalla es de 784px o menos */
+    }
+
+  }

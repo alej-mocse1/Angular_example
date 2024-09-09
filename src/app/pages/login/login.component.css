@@ -1,0 +1,14 @@
+
+.formStyles{
+    margin: 100px;
+}
+
+
+@media (max-width: 600px) {
+    .formStyles{
+        margin-left: 50px;
+    }
+    
+
+  }
+  

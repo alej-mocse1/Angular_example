@@ -1,0 +1,15 @@
+.container-img{
+}
+
+img{
+    max-height: 12rem;
+    width: auto;
+    max-width: 12rem;
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.card-body{
+    text-align: left;
+}
