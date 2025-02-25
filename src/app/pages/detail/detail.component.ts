@@ -27,7 +27,12 @@ export class DetailComponent implements OnInit,OnDestroy{
       
      this._http.getProductsCategory(id).subscribe((resp) => {
         // console.log("resp",resp);
-        this._ProductsDetail = resp
+        this._ProductsDetail = resp.map((el) => {
+          return {
+            ...el,
+            title: el.title.split(' ').slice(0, 3).join(' ')
+          }
+        })
       })
 
       // this._http.getCategories().subscribe((resp) => {

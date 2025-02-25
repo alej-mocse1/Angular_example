@@ -1,10 +1,21 @@
+.card{
+    border: 1px solid black;
+    min-height: 15rem;
+    max-height: 15rem;
+}
+
 .container-img{
+    min-height: 7.5rem;
+    border-bottom: 1px solid rgb(183, 179, 179);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
-    max-height: 12rem;
+    max-height: 7rem;
     width: auto;
-    max-width: 12rem;
+    max-width: 7rem;
     background-size: cover;
     cursor: pointer;
 }

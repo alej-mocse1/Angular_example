@@ -18,7 +18,8 @@ img{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px; /* Espacio entre las columnas y filas */
-    margin-top: 70px;
+    margin-top: 10px;
+    margin-bottom: 70px;
   }
 
 .productos-grid div{
@@ -36,7 +37,11 @@ img{
     padding-right: 100px;
   }
 
-
+.carousel{
+  border: 1px solid rgb(0, 0, 0);
+  margin: 30px;
+  padding-bottom: 90px;
+}
   
 .accordion{
     min-width: 70%;
