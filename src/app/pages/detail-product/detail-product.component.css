@@ -101,6 +101,8 @@ body {
     .container {
         flex-direction: column;
         align-items: left;
+        max-height: none;
+        min-height: 100%;
     }
 
     .image-gallery {

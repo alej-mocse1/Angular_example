@@ -9,9 +9,10 @@
         @for (item of _ProductsDetail; track item.id) {
             <div>
                 <app-cards
-                [title]="item.title"
-                [description]="item.description"
-                [image]="item.image"
+                    [title]="item.title"
+                    [description]="item.description"
+                    [image]="item.image"
+                    [id]="item.id"
                 />
             </div>
         }
